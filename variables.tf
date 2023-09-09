@@ -15,4 +15,13 @@ variable "instance_name" {
   description = "EC2 instance name"
   default     = "Provisioned by Terraform"
 }
+variable "AWS_SECRET_KEY" {
+  default = ""
+}
 
+variable "AWS_ACCESS_KEY1" {
+  default = ""
+}
+variable "AWS_REGION" {
+  default = ""
+}
