@@ -7,6 +7,18 @@ secret_key = "${var.AWS_SECRET_KEY}"
 region     = "${var.AWS_REGION}"
 }
 
+# Using a single workspace:
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "Devtestlab"
+
+    workspaces {
+      name = "Terraform-AWS-Test"
+    }
+  }
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
